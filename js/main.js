@@ -1,17 +1,55 @@
 console.log('Tic Tac Toe!');
 
-$(document).ready ( function() {
+// Track the number of turns a player has had, to check,  
 
-    $('.cell').on('click', function(){
+
+    // 0. Turn tracker. There should be a global variable from the outset that checks... how many turns have been taken and switches to 'X' or 'O' depending on the amount
+
+    // const checkTurns = function () {
+    //     if( numberOfTurns === 1) {
+    //         console.log('player has taken a turn');
+    //     } 
+    // }
+
+    // 1. User should be able to click on an individual cell and add an 'O' or 'X'
+
+    let numberOfTurns = 1;
+    
+    $(document).ready ( function() {
         console.log('cell clicked!');
-        $(this).addClass("fa fa-check");
+
+        $('.cell').click(function(){
+
+            if(numberOfTurns % 2 === 0) {
+                // Tell the user that it's player 1's turn.
+                $('#gameMessage').html("It's Player 1's turn");
+                //Adds circle to cell after click event.
+                $(this).html('X');
+                numberOfTurns += 1;
+                console.log(numberOfTurns)
+            } else {
+                //Tell the user that it's player 2's turn.
+                $('#gameMessage').html("It's Player 2's turn");
+                //Add 'O' mark to cell in grid.
+                $(this).html('O');
+                numberOfTurns += 1;
+                console.log(numberOfTurns)
+            }
         
-    });
+        }); // jQuery - click function.
+    
+    //3. When the player manages to have 3 'X' or 'O' in a row, or diagonally, they should win the round.
+        // --> a function could check whether there are winning moves in the grid.
+
+    // 4. The game should finish when player wins, and keep track of how many times the player has won.
+            // --> global variable for number of wins
+            // --> the game should keep adding to the variable depending on the outcome of the game.
+    // 5. 
 
 
 
 
-
+}); //end jQuery - document.ready
 
 
 
@@ -38,5 +76,3 @@ $(document).ready ( function() {
 // Check out Tutorial and Documentation resources (jQuery tutorial) at home to better understand what you’ll be getting into.
 // Don’t be afraid to write code that you know you will have to remove later. Create temporary elements (buttons, links, etc) that trigger events if real data is not available. For example, if you’re trying to figure out how to change some text when the game is over but you haven’t solved the win/lose game logic, you can create a button to simulate that until then.
 
-
-}); //end jQuery - document.ready
