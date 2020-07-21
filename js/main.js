@@ -2,10 +2,6 @@ console.log('Tic Tac Toe!');
 
 // Track the number of turns a player has had, to check,  
 
-let numberOfTurns = 1;
-
-
-
 
     // 0. Turn tracker. There should be a global variable from the outset that checks... how many turns have been taken and switches to 'X' or 'O' depending on the amount
 
@@ -17,22 +13,29 @@ let numberOfTurns = 1;
 
     // 1. User should be able to click on an individual cell and add an 'O' or 'X'
 
+    let numberOfTurns = 1;
+    
     $(document).ready ( function() {
         console.log('cell clicked!');
 
-        $('.cell').on('click', function(){
-            
+        $('.cell').click(function(){
+
             if(numberOfTurns === 1) {
-                // Tells the user whose turn it is.
-                $('#gameMessage').html("<p>It's player 1's turn");
+                // Tell the user that it's player 1's turn.
+                $('#gameMessage').html("It's Player 1's turn");
                 //Adds circle to cell after click event.
                 $(this).html('X');
-                let turn = 2;
+                let numberOfTurns = 2;
+                console.log(numberOfTurns)
             } else {
-                console.log('false');
+                //Tell the user that it's player 2's turn.
+                $('#gameMessage').html("It's Player 2's turn");
+                //Add 'O' mark to cell in grid.
+                $(this).html('O');
+                let numberOfTurns = 1;
+                console.log(numberOfTurns)
             }
-            // $(this).addClass("far fa-times");
-            console.log(numberOfTurns)
+        
         }); // jQuery - click function.
     
     // 2. The game should check how many turns have been taken and switch to 'X' or 'O' depending on whose turn it is.
