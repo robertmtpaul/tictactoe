@@ -1,5 +1,25 @@
 console.log('Tic Tac Toe!');
 
+$(document).ready ( function() {
+
+    $('.cell').on('click', function(){
+        console.log('cell clicked!');
+        $(this).addClass("fa fa-check");
+        
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -17,3 +37,6 @@ console.log('Tic Tac Toe!');
 // USE GIT: Commit early, commit often. Don’t be afraid to break something because you can always go back in time to a previous version.
 // Check out Tutorial and Documentation resources (jQuery tutorial) at home to better understand what you’ll be getting into.
 // Don’t be afraid to write code that you know you will have to remove later. Create temporary elements (buttons, links, etc) that trigger events if real data is not available. For example, if you’re trying to figure out how to change some text when the game is over but you haven’t solved the win/lose game logic, you can create a button to simulate that until then.
+
+
+}); //end jQuery - document.ready
