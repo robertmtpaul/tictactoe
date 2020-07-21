@@ -2,40 +2,52 @@ console.log('Tic Tac Toe!');
 
 // Track the number of turns a player has had, to check,  
 
-let numberOfTurns = 0;
+let numberOfTurns = 1;
 
 
 
 
-        // 0. Turn tracker. There should be a global variable from the outset that checks... how many turns have been taken and switches to 'X' or 'O' depending on the amount
-        // const checkTurns = function () {
-        //     if( numberOfTurns === 1) {
-        //         console.log('player has taken a turn');
-        //     } 
-        // }
+    // 0. Turn tracker. There should be a global variable from the outset that checks... how many turns have been taken and switches to 'X' or 'O' depending on the amount
 
-        // 1. User should be able to click on an individual cell and add an 'O' or 'X'
+    // const checkTurns = function () {
+    //     if( numberOfTurns === 1) {
+    //         console.log('player has taken a turn');
+    //     } 
+    // }
 
-        $(document).ready ( function() {
+    // 1. User should be able to click on an individual cell and add an 'O' or 'X'
 
-            $('.cell').on('click', function(){
-                console.log('cell clicked!');
-                $(this).addClass("far fas fa-circle");
-                let numberOfTurns = 1;
-                // $(this).addClass("far fa-times");
-                console.log(numberOfTurns)
-            }); // jQuery - click function.
-        
-        // 2. The game should check how many turns have been taken and switch to 'X' or 'O' depending on whose turn it is.
+    $(document).ready ( function() {
+        console.log('cell clicked!');
 
-        // 2B. The game shows the user whose turn it is, at the top
+        $('.cell').on('click', function(){
+            
+            if(numberOfTurns === 1) {
+                // Tells the user whose turn it is.
+                $('#gameMessage').html("<p>It's player 1's turn");
+                //Adds circle to cell after click event.
+                $(this).html('X');
+                let turn = 2;
+            } else {
+                console.log('false');
+            }
+            // $(this).addClass("far fa-times");
+            console.log(numberOfTurns)
+        }); // jQuery - click function.
+    
+    // 2. The game should check how many turns have been taken and switch to 'X' or 'O' depending on whose turn it is.
 
-        //3. When the player manages to have 3 'X' or 'O' in a row, or diagonally, they should win the round.
+        // if 
 
-        // 4. The game should finish when player wins, and keep track of how many times the player has won.
-                // --> global variable for number of wins
-                // --> the game should keep adding to the variable depending on the outcome of the game.
-        // 5. 
+    // 2B. The game shows the user whose turn it is, at the top
+
+    //3. When the player manages to have 3 'X' or 'O' in a row, or diagonally, they should win the round.
+        // --> a function could check whether there are winning moves in the grid.
+
+    // 4. The game should finish when player wins, and keep track of how many times the player has won.
+            // --> global variable for number of wins
+            // --> the game should keep adding to the variable depending on the outcome of the game.
+    // 5. 
 
 
 
