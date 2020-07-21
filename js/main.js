@@ -20,30 +20,24 @@ console.log('Tic Tac Toe!');
 
         $('.cell').click(function(){
 
-            if(numberOfTurns === 1) {
+            if(numberOfTurns % 2 === 0) {
                 // Tell the user that it's player 1's turn.
                 $('#gameMessage').html("It's Player 1's turn");
                 //Adds circle to cell after click event.
                 $(this).html('X');
-                let numberOfTurns = 2;
+                numberOfTurns += 1;
                 console.log(numberOfTurns)
             } else {
                 //Tell the user that it's player 2's turn.
                 $('#gameMessage').html("It's Player 2's turn");
                 //Add 'O' mark to cell in grid.
                 $(this).html('O');
-                let numberOfTurns = 1;
+                numberOfTurns += 1;
                 console.log(numberOfTurns)
             }
         
         }); // jQuery - click function.
     
-    // 2. The game should check how many turns have been taken and switch to 'X' or 'O' depending on whose turn it is.
-
-        // if 
-
-    // 2B. The game shows the user whose turn it is, at the top
-
     //3. When the player manages to have 3 'X' or 'O' in a row, or diagonally, they should win the round.
         // --> a function could check whether there are winning moves in the grid.
 
