@@ -16,10 +16,9 @@ console.log('Tic Tac Toe!');
 
         const checkCombination = function (input) {
             // check if the player has a horizontal row of the same item.
-                // if (areAllThreeTheSame($('.cell1').text(), $('.cell2').text(),$('.cell3').text() ) )
-                
+                // if (areAllThreeTheSame($('.cell1').text(), $('.cell2').text(),$('.cell3').text() ) )  
             if ( $('.cell1').text() && $('.cell2').text() && $('.cell3').text() === 'X' ) { 
-            //confirm that player won. 
+             
                 return true;
                 console.log('Player won')
             } 
@@ -45,20 +44,16 @@ console.log('Tic Tac Toe!');
                 console.log('Player won')        
             }
             //check if player has diagonal combo
-            else if ( $('.cell4').text() && $('.cell5').text() && $('.cell6').text() ) {
+            else if ( $('.cell1').text() && $('.cell5').text() && $('.cell9').text() ) {
                 return true;
                 console.log('Player won')        
             }
-            // } else if () {
-
-            // }
-            // else if ($('.cell4') && $('.cell5') && $('.cell6')) { // confirm that it's a winning move.
-            // console.log("It's a win!")
-            // // didTheyWin = true;
-            // } else {
-            // // 
-            // }
+            else if ( $('.cell3').text() && $('.cell5').text() && $('.cell7').text() ) {
+                return true;
+                console.log('Player won')        
             }
+
+            } //check combination.
 
 // if cells aren't empty, then run the checkWinningMove. 
 
