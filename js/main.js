@@ -21,36 +21,36 @@ $(document).ready ( function() {
         //check if the player has a horizontal row of the same item. 
         if ($('.cell1').text() !== '' && $('.cell1').text() === $('.cell2').text() && $('.cell3').text() === $('.cell2').text() ) { 
             didTheyWin = true;
+            console.log('Top row identical')
         } 
-        else if ( $('.cell4').text() === $('.cell5').text() && $('.cell5').text() === $('.cell6').text() ) {
+        else if ( $('.cell4').text() !== '' && $('.cell4').text() === $('.cell5').text() && $('.cell5').text() === $('.cell6').text() ) {
             // didTheyWin = true;
             console.log('Middle row identical')        
         } 
-        else if ( $('.cell7').text() === $('.cell8').text() && $('.cell9').text() === $('.cell8').text() ) {
+        else if ( $('.cell7').text() !== '' && $('.cell7').text() === $('.cell8').text() && $('.cell9').text() === $('.cell8').text() ) {
             // didTheyWin = true;
             console.log('Bottom row identical');        
         }
-
         //check if player has a vertical row
-        else if ( $('.cell1').text() === $('.cell4').text() && $('.cell7').text() === $('.cell4').text() ) {
+        else if ( $('.cell1').text() !== '' && $('.cell1').text() === $('.cell4').text() && $('.cell7').text() === $('.cell4').text() ) {
             // didTheyWin = true;
-            console.log('Left row identical');       
+            console.log('Left column identical');       
         }
-        else if ( $('.cell2').text() === $('.cell5').text() && $('.cell8').text() === $('.cell5').text() ) {
+        else if ( $('.cell2').text() !== '' && $('.cell2').text() === $('.cell5').text() && $('.cell8').text() === $('.cell5').text() ) {
             // didTheyWin = true;
             console.log('Middle column identical');       
         }
-        else if ( $('.cell3').text() === $('.cell6').text() && $('.cell9').text() === $('.cell6').text() ) {
+        else if ( $('.cell3').text() !== '' && $('.cell3').text() === $('.cell6').text() && $('.cell9').text() === $('.cell6').text() ) {
             // didTheyWin = true;
             console.log('Right column identical');        
         }
         //check if player has diagonal combo
-        else if ( $('.cell1').text() === $('.cell5').text() && $('.cell9').text() === $('.cell5').text() ) {
-        // didTheyWin = true;
+        else if ( $('.cell1').text() !== '' && $('.cell1').text() === $('.cell5').text() && $('.cell9').text() === $('.cell5').text() ) {
+            // didTheyWin = true;
                 console.log('Diagonals identical');        
         }
-        else if ( $('.cell3').text() === $('.cell5').text() && $('.cell7').text() === $('.cell5').text() ) {
-        // didTheyWin = true;
+        else if ( $('.cell3').text() !== '' && $('.cell3').text() === $('.cell5').text() && $('.cell7').text() === $('.cell5').text() ) {
+            // didTheyWin = true;
                 console.log('Diagonals identical');        
         }//end of conditional statements
     } //end of checkCombination function.
@@ -58,7 +58,7 @@ $(document).ready ( function() {
 
     $('.cell').click(function(){            
         console.log('cell clicked!');
-        if( (numberOfTurns % 2 === 0) && $(this).val === '')){
+        if (numberOfTurns % 2 === 0){
             // Tell the user that it's player 1's turn.
             $('#gameMessage').html("It's Player 1's turn");
             //Adds X to cell after click event.
