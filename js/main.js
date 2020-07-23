@@ -104,13 +104,6 @@ $(document).ready(function () {    //Start of jQuery DOM handling.
     }
   }); // jQuery - click function.
 
-  // RESET BUTTON: resets all cell divs to have no HTML so that players can restart.
-  $('#button').click(function () {
-    // console.log('clear game');
-    $('.cell').html('');
-    numberOfTurns = 0;
-  });
-
   $('#dialog').click(function () {
     // console.log('close dialog');
     numberOfTurns = 0;
