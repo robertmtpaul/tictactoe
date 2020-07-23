@@ -2,7 +2,7 @@ console.log('Tic Tac Toe!');
 
 //Turn tracker: global variable that tracks from the outset how many turns have been taken. 
 
-let numberOfTurns = 1;
+let numberOfTurns = 0;
 
 $(document).ready ( function() {    //Start of jQuery DOM handling.   
 
@@ -36,8 +36,7 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
             $(".cell9").text() === $(".cell8").text()
           ) {
             didTheyWin = true;
-            console.log("Bottom row identical");
-          } else if (
+            console.log("Bottom row identical");          } else if (
             //Checks if the player has left column of the same item.
             $(".cell1").text() !== "" &&
             $(".cell1").text() === $(".cell4").text() &&
@@ -70,6 +69,9 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
           ) {
             didTheyWin = true;
             console.log("Diagonals identical");
+            $('.cell').html(''); // needs to reset numberOfTurns
+            numberOfTurns = 0;
+
           } else if (
             //Checks if there is a diagonal combination of same item.
             $(".cell3").text() !== "" &&
@@ -77,11 +79,13 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
             $(".cell7").text() === $(".cell5").text()
           ) {
             didTheyWin = true;
-            console.log('Diagonals identical');        
+            console.log('Diagonals identical');
         } else if (
             //Checks if all turns have been taken, and tells the players it's a draw.
             numberOfTurns >= 9 ) {
-            $('#gameMessage').html("Aww dang, it's a draw. Try again!");
+            console.log("It's a draw");
+            $('#draw').html("Aww dang, it's a draw. Try again!");
+
         }        
         //end of conditional statements
     } //end of checkCombination function.
@@ -90,23 +94,25 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
         console.log('cell clicked!');
         if ($(this).text() === '') {
             if (numberOfTurns % 2 === 0){
-                // Show whose turn it is.
+                // Shows whose turn it is.
                 $('#gameMessage').html("<i class='fas fa-angle-right'></i>It's Player 1's turn");
-                //Add X to cell after click event.
+                //Adds X to cell after click event.
                 $(this).html('X');
-                //Check if the move has won the game.
-                checkCombination();  
-                //Switch turn to next player
+                //Switches turn to next player
                 numberOfTurns += 1;
+                //Checks if the move has won the game.
+                checkCombination();  
+                console.log(numberOfTurns)
             } else {
                 // Show whose turn it is.
                 $('#gameMessage').html("<i class='fas fa-angle-right'></i>It's Player 2's turn");
                 //Add 'O' mark to cell after click event.
                 $(this).html('O');
-                //Check if the move has won the game.
-                checkCombination();
-                //Switch turn to next player
+                //Switches turn to next player
                 numberOfTurns += 1;
+                console.log(numberOfTurns)
+                //Checks if the move has won the game.
+                checkCombination();
             }
         }
     }); // jQuery - click function.
@@ -115,6 +121,7 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
     $('#button').click(function(){
         // console.log('clear game');
         $('.cell').html('');
+        numberOfTurns = 0;
     });   
 
 }); //end jQuery - document.ready
