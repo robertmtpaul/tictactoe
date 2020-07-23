@@ -16,11 +16,11 @@ header {
     margin: 0 auto;
 }
 .cell {
-    font-size: 80pt;
+    font-size: 700%;
     color: rgb(254, 254, 254);
     display: inline-block;
     width: 20vw;
-    vertical-align: top;
+    vertical-align: middle;
     border-radius: 10%;
     height: 20vw;    
     border: rgba(255, 255, 255, 0.447) solid 2px;

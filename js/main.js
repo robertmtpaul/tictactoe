@@ -20,27 +20,17 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
         let cell9 = $(".cell9").html();
         
         // Check if cells aren't empty, and if not, runs conditional logic
-        if (cell1 !== "" && 
-            //Checks if the player has a horizontal top row of the same item.        
-            cell1 === cell2 && cell3 === cell2) {
+        if (cell1 !== "" && cell1 === cell2 && cell3 === cell2) {
             didTheyWin = true;
             console.log("Top row identical");
             numberOfTurns = 0;
-          } else if (
-            //Checks if the player has a horizontal middle row of the same item.
-            $(".cell4").text() !== "" &&
-            $(".cell4").text() === $(".cell5").text() &&
-            $(".cell5").text() === $(".cell6").text()
-          ) {
+          } //Check if the player has a horizontal middle row of the same item. 
+        else if (cell4 !== "" && cell4 === cell5 && cell5 === cell6 ){
             didTheyWin = true;
             console.log("Middle row identical");
             numberOfTurns = 0;
-          } else if (
-            //Checks if the player has a horizontal bottom row of the same item.
-            $(".cell7").text() !== "" &&
-            $(".cell7").text() === $(".cell8").text() &&
-            $(".cell9").text() === $(".cell8").text()
-          ) {
+        } //Checks if the player has a horizontal bottom row of the same item.
+        else if ( cell7 !== "" && cell7 === cell8 && cell9 === cell8 ) {
             didTheyWin = true;
             console.log("Bottom row identical");
             $('.cell').html('');
@@ -143,9 +133,9 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
 
     $('#dialog').click(function(){
         // console.log('close dialog');
-        $('#dialog').hide();
         numberOfTurns = 0;
         $('.cell').html('');
+        $('#dialog').hide();
     });            
 
 }); //end jQuery - document.ready
