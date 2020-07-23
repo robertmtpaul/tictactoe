@@ -14,20 +14,15 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
         let cell3 = $(".cell3").html();
         let cell4 = $(".cell4").html();
         let cell5 = $(".cell5").html();
-        let cell6 = $(".cell5").html();
-        let cell7 = $(".cell5").html();
-        let cell8 = $(".cell5").html();
-        let cell9 = $(".cell5").html();
+        let cell6 = $(".cell6").html();
+        let cell7 = $(".cell7").html();
+        let cell8 = $(".cell8").html();
+        let cell9 = $(".cell9").html();
         
-        //Variable to store whether or not the player has won.
-        
-        if ( 
-            // Checks if cells aren't empty, and if not, runs the following conditional logic
-            cell1 !== "" && 
+        // Check if cells aren't empty, and if not, runs conditional logic
+        if (cell1 !== "" && 
             //Checks if the player has a horizontal top row of the same item.        
-            cell1 === $(".cell2").html() &&
-            $(".cell3").html() === $(".cell2").html()
-          ) {
+            cell1 === cell2 && cell3 === cell2) {
             didTheyWin = true;
             console.log("Top row identical");
             numberOfTurns = 0;
@@ -108,7 +103,7 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
 
     $('.cell').click(function(){            
         console.log('cell clicked!');
-        if ($(this).text() === '') {
+        if ($(this).html() === '') {
             if (numberOfTurns % 2 === 0){
                 //Adds X to cell after click event.
                 $(this).html('<i class="fas fa-hands-wash"></i>');
