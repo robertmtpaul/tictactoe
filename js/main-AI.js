@@ -1,26 +1,27 @@
+// 1. click in centre square
+// 2. get list of empty cells with class
+//re move free when clicking.
+// 3. AI - find eveything with class .free , and make move
+
 console.log('Tic Tac Toe!');
 
 //Turn tracker: global variable that tracks from the outset how many turns have been taken. 
-
+  
 let numberOfTurns = 0;
-let didTheyWin = false; 
 
 $(document).ready ( function() {    //Start of jQuery DOM handling.   
 
     //Function to run to check with conditional logic whether combination of moves wins the game. 
     const checkCombination = function () { 
-        let cell1 = $(".cell1").text();
-        let cell2 = $(".cell2").text();
-        let cell3 = $(".cell3").text();
-        let cell4 = $(".cell4").text();
-        let cell5 = $(".cell5").text();
+        
         //Variable to store whether or not the player has won.
+        let didTheyWin = false; 
         
         if ( 
             // Checks if cells aren't empty, and if not, runs the following conditional logic
-            cell1 !== "" && 
+            $(".cell1").text() !== "" && 
             //Checks if the player has a horizontal top row of the same item.        
-            cell1 === $(".cell2").text() &&
+            $(".cell1").text() === $(".cell2").text() &&
             $(".cell3").text() === $(".cell2").text()
           ) {
             didTheyWin = true;
@@ -47,10 +48,11 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
             console.log("Bottom row identical");
             $('.cell').html('');
             numberOfTurns = 0;          
-        } else if (cell1 !== "" && cell1 === $(".cell4").text() && $(".cell7").text() === $(".cell4").text()
-
+        } else if (
             //Checks if the player has left column of the same item.
-            
+            $(".cell1").text() !== "" &&
+            $(".cell1").text() === $(".cell4").text() &&
+            $(".cell7").text() === $(".cell4").text()
           ) {
             didTheyWin = true;
             console.log("Left column identical");
@@ -79,8 +81,8 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
           }
           else if (
             //Checks if there is a diagonal combination of same item.
-            cell1 !== "" &&
-            cell1 === $(".cell5").text() &&
+            $(".cell1").text() !== "" &&
+            $(".cell1").text() === $(".cell5").text() &&
             $(".cell9").text() === $(".cell5").text()
           ) {
             didTheyWin = true;
@@ -93,16 +95,17 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
             $(".cell3").text() !== "" &&
             $(".cell3").text() === $(".cell5").text() &&
             $(".cell7").text() === $(".cell5").text()
-          ) { 
+          ) {
             didTheyWin = true;
             console.log('Diagonals identical');
             $('.cell').html('');
             numberOfTurns = 0;
-        } else if ( numberOfTurns >= 9 ) {
+        } else if (
             //Checks if all turns have been taken, and tells the players it's a draw.
+            numberOfTurns >= 9 ) {
             console.log("It's a draw");
             // $('#draw').html("Aww dang, it's a draw. Try again!");
-            // click handler -- 
+            
             $('.cell').html('');
             numberOfTurns = 0;
         }        
@@ -113,19 +116,18 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
         console.log('cell clicked!');
         if ($(this).text() === '') {
             if (numberOfTurns % 2 === 0){
+                // Shows whose turn it is.
+                $('#gameMessage').html("<i class='fas fa-angle-right'></i>It's Player 1's turn");
                 //Adds X to cell after click event.
                 $(this).html('X');
                 //Switches turn to next player
                 numberOfTurns += 1;
                 //Checks if the move has won the game.
                 checkCombination();  
-                if ( didTheyWin === true ) {
-                  $('#dialog span').html('Player X wins.');
-                  $('#dialog').show();
-                }
-                // get function to return true/false value of checkCom.. to indicate win
                 console.log(numberOfTurns);
             } else {
+                // Show whose turn it is.
+                $('#gameMessage').html("<i class='fas fa-angle-right'></i>It's Player 2's turn");
                 //Add 'O' mark to cell after click event.
                 $(this).html('O');
                 //Switches turn to next player
@@ -133,11 +135,6 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
                 console.log(numberOfTurns)
                 //Checks if the move has won the game.
                 checkCombination();
-                if ( didTheyWin === true ) {
-                  $('#dialog span').html('Player O wins.');
-                  $('#dialog').show();
-                }
-
             }
         }
     }); // jQuery - click function.
