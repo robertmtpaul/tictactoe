@@ -34,7 +34,6 @@ $(document).ready(function () {    //Start of jQuery DOM handling.
       //Checks if the player has a horizontal bottom row of the same item.
       didTheyWin = true;
       console.log("Bottom row identical");
-      $('.cell').html('');
       numberOfTurns = 0;
     } else if ( cell1 !== "" && cell1 === cell4 && cell7 === cell4 ) {
       //Checks if the player has left column of the same item.
@@ -84,6 +83,7 @@ $(document).ready(function () {    //Start of jQuery DOM handling.
         if (didTheyWin === true) {
           $('#dialog span').html('Player <i class="fas fa-hands-wash"></i> wins.');
           $('#dialog').show();
+
         }
         // get function to return true/false value of checkCom.. to indicate win
         console.log(numberOfTurns);
@@ -99,7 +99,6 @@ $(document).ready(function () {    //Start of jQuery DOM handling.
           $('#dialog span').html('Player O wins.');
           $('#dialog').show();
         }
-
       }
     }
   }); // jQuery - click function.
@@ -109,6 +108,7 @@ $(document).ready(function () {    //Start of jQuery DOM handling.
     numberOfTurns = 0;
     $('.cell').html('');
     $('#dialog').hide();
+    didTheyWin = false;
   });
 
 }); //end jQuery - document.ready
