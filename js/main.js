@@ -9,23 +9,27 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
 
     //Function to run to check with conditional logic whether combination of moves wins the game. 
     const checkCombination = function () { 
-        let cell1 = $(".cell1").text();
-        let cell2 = $(".cell2").text();
-        let cell3 = $(".cell3").text();
-        let cell4 = $(".cell4").text();
-        let cell5 = $(".cell5").text();
+        let cell1 = $(".cell1").html();
+        let cell2 = $(".cell2").html();
+        let cell3 = $(".cell3").html();
+        let cell4 = $(".cell4").html();
+        let cell5 = $(".cell5").html();
+        let cell6 = $(".cell5").html();
+        let cell7 = $(".cell5").html();
+        let cell8 = $(".cell5").html();
+        let cell9 = $(".cell5").html();
+        
         //Variable to store whether or not the player has won.
         
         if ( 
             // Checks if cells aren't empty, and if not, runs the following conditional logic
             cell1 !== "" && 
             //Checks if the player has a horizontal top row of the same item.        
-            cell1 === $(".cell2").text() &&
-            $(".cell3").text() === $(".cell2").text()
+            cell1 === $(".cell2").html() &&
+            $(".cell3").html() === $(".cell2").html()
           ) {
             didTheyWin = true;
             console.log("Top row identical");
-            $('.cell').html('');
             numberOfTurns = 0;
           } else if (
             //Checks if the player has a horizontal middle row of the same item.
@@ -35,7 +39,6 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
           ) {
             didTheyWin = true;
             console.log("Middle row identical");
-            $('.cell').html('');
             numberOfTurns = 0;
           } else if (
             //Checks if the player has a horizontal bottom row of the same item.
@@ -54,7 +57,6 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
           ) {
             didTheyWin = true;
             console.log("Left column identical");
-            $('.cell').html('');
             numberOfTurns = 0;
           } else if (
             //Checks if the player has middle column of the same item.
@@ -64,7 +66,6 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
           ) {
             didTheyWin = true;
             console.log("Middle column identical");
-            $('.cell').html('');
             numberOfTurns = 0;
           } else if (
             //Checks if the player has right column of the same item.
@@ -74,7 +75,6 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
           ) {
             didTheyWin = true;
             console.log("Right column identical");
-            $('.cell').html('');
             numberOfTurns = 0;
           }
           else if (
@@ -85,7 +85,6 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
           ) {
             didTheyWin = true;
             console.log("Diagonals identical");
-            $('.cell').html('');
             numberOfTurns = 0;
 
           } else if (
@@ -96,14 +95,12 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
           ) { 
             didTheyWin = true;
             console.log('Diagonals identical');
-            $('.cell').html('');
             numberOfTurns = 0;
         } else if ( numberOfTurns >= 9 ) {
             //Checks if all turns have been taken, and tells the players it's a draw.
             console.log("It's a draw");
-            // $('#draw').html("Aww dang, it's a draw. Try again!");
-            // click handler -- 
-            $('.cell').html('');
+            $('#dialog span').html("It's a draw. Play again!");
+            $('#dialog').show();
             numberOfTurns = 0;
         }        
         //end of conditional statements
@@ -114,20 +111,20 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
         if ($(this).text() === '') {
             if (numberOfTurns % 2 === 0){
                 //Adds X to cell after click event.
-                $(this).html('X');
+                $(this).html('<i class="fas fa-hands-wash"></i>');
                 //Switches turn to next player
                 numberOfTurns += 1;
                 //Checks if the move has won the game.
                 checkCombination();  
                 if ( didTheyWin === true ) {
-                  $('#dialog span').html('Player X wins.');
+                  $('#dialog span').html('Player <i class="fas fa-hands-wash"></i> wins.');
                   $('#dialog').show();
                 }
                 // get function to return true/false value of checkCom.. to indicate win
                 console.log(numberOfTurns);
             } else {
                 //Add 'O' mark to cell after click event.
-                $(this).html('O');
+                $(this).html('<i class="fas fa-virus"></i>');
                 //Switches turn to next player
                 numberOfTurns += 1;
                 console.log(numberOfTurns)
@@ -146,27 +143,15 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
     $('#button').click(function(){
         // console.log('clear game');
         $('.cell').html('');
-        $('#draw').html('');
         numberOfTurns = 0;
     });   
 
     $('#dialog').click(function(){
-
-        console.log('close dialog')
+        // console.log('close dialog');
+        $('#dialog').hide();
+        numberOfTurns = 0;
+        $('.cell').html('');
     });            
-
-
-
-// AI
-
-// after every human click, comp automatically plays
-
-
-
-
-
-
-
 
 }); //end jQuery - document.ready
 
