@@ -18,7 +18,7 @@ header {
 .cell {
     font-size: 700%;
     color: rgb(254, 254, 254);
-    display: flex;
+    display: inline-block;
     width: 20vw;
     vertical-align: middle;
     border-radius: 10%;
