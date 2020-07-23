@@ -21,6 +21,8 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
           ) {
             didTheyWin = true;
             console.log("Top row identical");
+            $('.cell').html('');
+            numberOfTurns = 0;
           } else if (
             //Checks if the player has a horizontal middle row of the same item.
             $(".cell4").text() !== "" &&
@@ -29,6 +31,8 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
           ) {
             didTheyWin = true;
             console.log("Middle row identical");
+            $('.cell').html('');
+            numberOfTurns = 0;
           } else if (
             //Checks if the player has a horizontal bottom row of the same item.
             $(".cell7").text() !== "" &&
@@ -36,7 +40,10 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
             $(".cell9").text() === $(".cell8").text()
           ) {
             didTheyWin = true;
-            console.log("Bottom row identical");          } else if (
+            console.log("Bottom row identical");
+            $('.cell').html('');
+            numberOfTurns = 0;          
+        } else if (
             //Checks if the player has left column of the same item.
             $(".cell1").text() !== "" &&
             $(".cell1").text() === $(".cell4").text() &&
@@ -44,6 +51,8 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
           ) {
             didTheyWin = true;
             console.log("Left column identical");
+            $('.cell').html('');
+            numberOfTurns = 0;
           } else if (
             //Checks if the player has middle column of the same item.
             $(".cell2").text() !== "" &&
@@ -52,6 +61,8 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
           ) {
             didTheyWin = true;
             console.log("Middle column identical");
+            $('.cell').html('');
+            numberOfTurns = 0;
           } else if (
             //Checks if the player has right column of the same item.
             $(".cell3").text() !== "" &&
@@ -60,6 +71,8 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
           ) {
             didTheyWin = true;
             console.log("Right column identical");
+            $('.cell').html('');
+            numberOfTurns = 0;
           }
           else if (
             //Checks if there is a diagonal combination of same item.
@@ -69,7 +82,7 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
           ) {
             didTheyWin = true;
             console.log("Diagonals identical");
-            $('.cell').html(''); // needs to reset numberOfTurns
+            $('.cell').html('');
             numberOfTurns = 0;
 
           } else if (
@@ -80,12 +93,15 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
           ) {
             didTheyWin = true;
             console.log('Diagonals identical');
+            $('.cell').html('');
+            numberOfTurns = 0;
         } else if (
             //Checks if all turns have been taken, and tells the players it's a draw.
             numberOfTurns >= 9 ) {
             console.log("It's a draw");
             $('#draw').html("Aww dang, it's a draw. Try again!");
-
+            $('.cell').html('');
+            numberOfTurns = 0;
         }        
         //end of conditional statements
     } //end of checkCombination function.
@@ -102,7 +118,7 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
                 numberOfTurns += 1;
                 //Checks if the move has won the game.
                 checkCombination();  
-                console.log(numberOfTurns)
+                console.log(numberOfTurns);
             } else {
                 // Show whose turn it is.
                 $('#gameMessage').html("<i class='fas fa-angle-right'></i>It's Player 2's turn");
@@ -121,6 +137,7 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
     $('#button').click(function(){
         // console.log('clear game');
         $('.cell').html('');
+        $('#draw').html('');
         numberOfTurns = 0;
     });   
 
