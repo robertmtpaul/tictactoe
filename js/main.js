@@ -78,7 +78,12 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
           ) {
             didTheyWin = true;
             console.log('Diagonals identical');        
-        }//end of conditional statements
+        } else if (
+            //Checks if all turns have been taken, and tells the players it's a draw.
+            numberOfTurns >= 9 ) {
+            $('#gameMessage').html("Aww dang, it's a draw. Try again!");
+        }        
+        //end of conditional statements
     } //end of checkCombination function.
 
     $('.cell').click(function(){            
@@ -86,7 +91,7 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
         if ($(this).text() === '') {
             if (numberOfTurns % 2 === 0){
                 // Show whose turn it is.
-                $('#gameMessage').html("It's Player 1's turn");
+                $('#gameMessage').html("<i class='fas fa-angle-right'></i>It's Player 1's turn");
                 //Add X to cell after click event.
                 $(this).html('X');
                 //Check if the move has won the game.
@@ -95,7 +100,7 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
                 numberOfTurns += 1;
             } else {
                 // Show whose turn it is.
-                $('#gameMessage').html("It's Player 2's turn");
+                $('#gameMessage').html("<i class='fas fa-angle-right'></i>It's Player 2's turn");
                 //Add 'O' mark to cell after click event.
                 $(this).html('O');
                 //Check if the move has won the game.
@@ -111,6 +116,7 @@ $(document).ready ( function() {    //Start of jQuery DOM handling.
         // console.log('clear game');
         $('.cell').html('');
     });   
+
 }); //end jQuery - document.ready
 
 

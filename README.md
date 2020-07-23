@@ -1,3 +1,13 @@
+BUGS:
+- when click reset button, doesn't reset all turns
+
+- When window resized, boxes are displayed on different lines, confusingly
+
+
+
+
+
+
 When the player manages to have 3 'X' or 'O' in a row, or diagonally, they should win the round.
     // --> a function could check whether there are winning moves in the grid.
 
@@ -8,11 +18,8 @@ When the player manages to have 3 'X' or 'O' in a row, or diagonally, they shoul
 // 5. There should be a button to clear the grid and play counters
 
 
-
-
-
-    // RESET BUTTON:
-    //  reset all cell divs to have no HTML
+RESET BUTTON:
+reset all cell divs to have no HTML
 
 
 
