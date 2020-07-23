@@ -1,3 +1,20 @@
+# README - Tic-Tac-Toe
+
+This is a simple Tic-Tac-Toe game played in the browser, powered by HTML, CSS and JavaScript with jQuery for DOM manipulation. 
+
+The game must be played in a browser, and has been verified to work in Chrome, Firefox and Safari browsers at this time.
+
+How do you play Tic-Tac-Toe?
+
+The game can be played by two players who take turns to add their token, a handwashing icon or a virus icon to the grid, and try to get a winning combination.
+
+A winning combination is three icons horizontally, vertically, or diagonally. 
+
+
+
+
+
+
 BUGS:
 - when click reset button, doesn't reset all turns
 

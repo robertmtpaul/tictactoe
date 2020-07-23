@@ -7,7 +7,7 @@ let didTheyWin = false;
 
 $(document).ready(function () {    //Start of jQuery DOM handling.   
 
-  //Function to run to check with conditional logic whether combination of moves wins the game. 
+  //Function to run to check with z conditional logic whether combination of moves wins the game. 
   const checkCombination = function () {
     let cell1 = $(".cell1").html();
     let cell2 = $(".cell2").html();
@@ -18,10 +18,9 @@ $(document).ready(function () {    //Start of jQuery DOM handling.
     let cell7 = $(".cell7").html();
     let cell8 = $(".cell8").html();
     let cell9 = $(".cell9").html();
-
-
+    
+    // Check if cells aren't empty, and if not, runs conditional logic
     if ( cell1 !== "" && cell1 === cell2 && cell3 === cell2 ) {
-      // Check if cells aren't empty, and if not, runs conditional logic
       didTheyWin = true;
       console.log("Top row identical");
       numberOfTurns = 0;
