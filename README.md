@@ -4,12 +4,20 @@ This is a simple Tic-Tac-Toe game played in the browser, powered by HTML, CSS an
 
 The game must be played in a browser, and has been verified to work in Chrome, Firefox and Safari browsers at this time.
 
-How do you play Tic-Tac-Toe?
 
-The game can be played by two players who take turns to add their token, a handwashing icon or a virus icon to the grid, and try to get a winning combination.
+**How was the game built?**
 
-A winning combination is three icons horizontally, vertically, or diagonally. 
+I have used conditional logic in JavaScript on jQuery targeted DOM elements to see if the user has clicked a box. A global variable 'numberOfTurns' checks how many turns have been taken and switches between the tokens based on the number of turns. 
 
+The conditional logic further checks for a winning combination of moves by seeing if all boxes are of equal value, on every click event. Each time a user clicks, a click event checks with conditional logic if all turns have been taken and displays a CSS modal window notifying the users if so.
+
+The grid resets at the end of the game: when a player wins or there is a draw. 
+
+**How do you play Tic-Tac-Toe?**
+
+- The game can be played by two players who take turns to add their token, a handwashing icon or a virus icon to a 3x3 grid, and try to get a winning combination.
+
+- A winning combination is three icons horizontally, vertically, or diagonally. The game ends when the players get a winning combination or all boxes in the grid are filled.
 
 
 
