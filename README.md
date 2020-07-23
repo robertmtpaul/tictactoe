@@ -1,3 +1,33 @@
+When the player manages to have 3 'X' or 'O' in a row, or diagonally, they should win the round.
+    // --> a function could check whether there are winning moves in the grid.
+
+// 4. The game should finish when player wins, and keep track of how many times the player has won.
+        // --> the game should keep adding to the variable depending on the outcome of the game.
+
+
+// 5. There should be a button to clear the grid and play counters
+
+
+
+
+
+    // RESET BUTTON:
+    //  reset all cell divs to have no HTML
+
+
+
+
+
+
+
+
+
+
+
+
+BRIEF:
+
+
 
 Technical Requirements
 Your app must:
