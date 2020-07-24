@@ -18,9 +18,10 @@ The grid resets at the end of the game: when a player wins or there is a draw. T
 
 **How do you install/play Tic-Tac-Toe?**
 
-- To install the game, you just need to use Chrome, Firefox or the Safari browser (the currently supported browsers) to open the index.html file or visit the game at the hosted address, https://robertmtpaul.github.io/tictactoe/. The URL can also be found in the URL section of the repository. 
+1. To install the game, you just need to use Chrome, Firefox or the Safari browser (the currently supported browsers) to open the index.html file or visit the game at the hosted address, https://robertmtpaul.github.io/tictactoe/. 
+    1.The URL can also be found in the URL section of the repository. 
 
-- The game can be played by two players who take turns to add their token, a handwashing icon or a virus icon to a 3x3 grid, and try to get a winning combination.
+1. The game can be played by two players who take turns to add their token, a handwashing icon or a virus icon to a 3x3 grid, and try to get a winning combination.
 
 ![Screenshot of game](./img/screenshot.png)
 
