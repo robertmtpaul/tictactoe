@@ -95,7 +95,7 @@ $(document).ready(function () {    //Start of jQuery DOM handling.
         //Checks if the move has won the game.
         checkCombination();
         if (didTheyWin === true) {
-          $('#dialog span').html('Player O wins.');
+          $('#dialog span').html('Player <i class="fas fa-virus"></i> wins.');
           $('#dialog').show();
         }
       }

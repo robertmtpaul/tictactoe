@@ -4,12 +4,15 @@ This is a simple Tic-Tac-Toe game played in the browser, powered by HTML, CSS an
 
 The game must be played in a browser, and has been verified to work in Chrome, Firefox and Safari browsers at this time.
 
+The user tokens are a handwashing icon and virus icon instead of the traditional 'X' and 'O'. 
 
 **How was the game built?**
 
 I have used conditional logic in JavaScript on jQuery targeted DOM elements to see if the user has clicked a box. A global variable 'numberOfTurns' checks how many turns have been taken and switches between the tokens based on the number of turns. 
 
 The conditional logic further checks for a winning combination of moves by seeing if all boxes are of equal value, on every click event. Each time a user clicks, a click event checks with conditional logic if all turns have been taken and displays a CSS modal window notifying the users if so.
+
+A user is prevented from double clicking a box by a conditional statement that checks to see if the box is filled, and if so, does not allow a token to be added to the box.
 
 The grid resets at the end of the game: when a player wins or there is a draw. 
 
@@ -20,13 +23,13 @@ The grid resets at the end of the game: when a player wins or there is a draw.
 - A winning combination is three icons horizontally, vertically, or diagonally. The game ends when the players get a winning combination or all boxes in the grid are filled.
 
 
+**Known bugs**
 
+- If a user clicks beside a box more than once, this counts as a turn taken, and therefore throws out the numberOfTurns variable.
 
+- When the browser window is resized, the icons display too large, i.e. outside of the grid. When the browser window is fully expanded, the icons display much smaller than the grid boxes.
 
-BUGS:
-- when click reset button, doesn't reset all turns
-
-- When window resized, boxes are displayed on different lines, confusingly
+- The game currently is not optimised for mobile phone screens.
 
 
 
