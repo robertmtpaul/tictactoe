@@ -22,6 +22,8 @@ The grid resets at the end of the game: when a player wins or there is a draw. T
 
 - The game can be played by two players who take turns to add their token, a handwashing icon or a virus icon to a 3x3 grid, and try to get a winning combination.
 
+![Screenshot of game](./img/screenshot.png)
+
 - A winning combination is three icons horizontally, vertically, or diagonally. The game ends when the players get a winning combination or all boxes in the grid are filled.
 
 **Known bugs**
