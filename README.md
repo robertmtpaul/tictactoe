@@ -35,14 +35,3 @@ The grid resets at the end of the game: when a player wins or there is a draw. T
 - It's currently not possible to keep track of how many times each user has won the game, and this is a feature that will be added in time.
 
 - The game must be played by two people, and there is no AI opponent users can play against, yet. 
-
-
-
-
-Necessary Deliverables
-- A working game, built by you, hosted somewhere on the internet
-- A link to your hosted working game in the URL section of your Github repo
-- A git repository hosted on Github, with a link to your hosted game, and frequent commits dating back to the very beginning of the project
-- A readme.md file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
-- On Friday of project week everyone individually presents their project to the class, with an overview of the app and a brief code tour of the highlights.
-
