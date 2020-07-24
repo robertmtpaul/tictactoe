@@ -35,6 +35,6 @@ The grid resets at the end of the game: when a player wins or there is a draw. T
 
 **Unsolved problems/matters**
 
-- It's currently not possible to keep track of how many times each user has won the game, and this is a feature that will be added in time.
+- It's currently not possible to keep track of how many times each user has won the game; this is a feature that will be added in time.
 
 - The game must be played by two people, and there is no AI opponent users can play against, yet. 
