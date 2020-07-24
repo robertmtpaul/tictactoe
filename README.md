@@ -1,5 +1,7 @@
 # README - Tic-Tac-Toe
 
+[Play the game](https://robertmtpaul.github.io/tictactoe/)
+
 This is a simple Tic-Tac-Toe game played in the browser, powered by HTML, CSS and JavaScript with jQuery for DOM manipulation. 
 
 The game must be played in a browser, and has been verified to work in Chrome, Firefox and Safari browsers at this time.
@@ -18,8 +20,8 @@ The grid resets at the end of the game: when a player wins or there is a draw. T
 
 **How do you install/play Tic-Tac-Toe?**
 
-1. To install the game, you just need to use Chrome, Firefox or the Safari browser (the currently supported browsers) to open the index.html file or visit the game at the hosted address, https://robertmtpaul.github.io/tictactoe/. 
-    1. The URL can also be found in the URL section of the repository. 
+1. To install the game, you just need to use a web browser to open the index.html file or visit the game at https://robertmtpaul.github.io/tictactoe/. 
+    1. The currently supported browsers are Chrome, Mozilla Firefox and Safari.
 
 1. The game can be played by two players who take turns to add their token, a handwashing icon or a virus icon to a 3x3 grid, and try to get a winning combination.
 
