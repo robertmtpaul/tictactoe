@@ -1,6 +1,6 @@
 # README - Tic-Tac-Toe
 
-[Play the game](https://robertmtpaul.github.io/tictactoe/)
+[URL](https://robertmtpaul.github.io/tictactoe/)
 
 This is a simple Tic-Tac-Toe game played in the browser, powered by HTML, CSS and JavaScript with jQuery for DOM manipulation. 
 
