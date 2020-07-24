@@ -14,7 +14,7 @@ The conditional logic further checks for a winning combination of moves by seein
 
 A user is prevented from double clicking a box by a conditional statement that checks to see if the box is filled, and if so, does not allow a token to be added to the box.
 
-The grid resets at the end of the game: when a player wins or there is a draw. The game is reset by using jQuery to target the DOM elements and give them a value of an empty string, reset the `didTheyWin` global variable, and reset `numberOfTurns` to `0`.
+The grid resets at the end of the game: when a player wins or there is a draw. The game is reset by using jQuery to target the DOM elements and give them a value of an empty string, reset the `didTheyWin` boolean value, and reset `numberOfTurns` to `0`.
 
 **How do you install/play Tic-Tac-Toe?**
 
