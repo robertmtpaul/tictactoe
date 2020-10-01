@@ -1,4 +1,4 @@
-# README - Tic-Tac-Toe
+# Tic-Tac-Toe
 
 This is a simple Tic-Tac-Toe game played in the browser, powered by HTML, CSS and JavaScript with jQuery for DOM manipulation. 
 
