@@ -2,7 +2,7 @@
 
 This is a simple Tic-Tac-Toe game played in the browser, powered by HTML, CSS and JavaScript with jQuery for DOM manipulation. 
 
-The game can be played in a browser, and has been verified to work in Chrome, Firefox and Safari browsers at this time. The user tokens are a handwashing icon and virus icon instead of the traditional 'X' and 'O'. 
+The game has been verified to work in Chrome, Firefox and Safari browsers at this time. The user tokens are a handwashing icon and virus icon instead of the traditional 'X' and 'O'. 
 
 **How was the game built?**
 
